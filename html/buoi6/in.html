@@ -4,11 +4,22 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="bootstrap.css">
     </head>
+    <style>
+        .col-12,
+        .col-sm-4,
+        .col-sm-6 {
+            height: 100px;
+        }
+    </style>
 <body>
     <div class="container">
-        <div class="row" style="height: 100px; width: 100%;">
-            <div class="col-12 btn-danger"></div>
-            <div class="col-sm-6 btn-dark"></div>
+        <div class="row">
+            <div class="col-12 col-sm-6 btn-danger"></div>
+            <div class="col-12 col-sm-6 btn-dark"></div>
+            <div class="col-12 bg-primary"></div>
+            <div class="d-none d-sm-block col-sm-4 bg-dark"></div>
+            <div class="d-none d-sm-block col-sm-4 bg-danger"></div>
+            <div class="d-none d-sm-block col-sm-4 bg-secondary"></div>
         </div>
     </div>
 </body>
