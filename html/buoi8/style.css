@@ -1,0 +1,22 @@
+.images {
+    background-image: url('./hinh-anh-dep-1.jpg');
+    background-repeat: no-repeat;
+}
+.image-2 {
+    background-image: url('./hinh-anh-dep-1.jpg');
+}
+.image-1 {
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: center -200px;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.image-3 {
+    background-image: url('./img.jpg');
+    background-position: center -100px;
+}
+.image-4 {
+    background-image: url('./img2.jpg');
+    background-position: center -150px; 
+}
