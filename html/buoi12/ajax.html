@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+</head>
+
+<body>
+    <p id="a"></p>
+    <script>
+        function loadData() {
+            var http = new XMLHttpRequest();
+            http.open('GET', './data.json');
+            http.send();
+            http.onreadystatechange = function() {
+                if (http.readyState == 4) {
+                   document.getElementById('a').innerHTML = JSON.parse(http.responseText).samsung.name;
+                }
+            };
+        }
+        loadData()
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid lightblue;
+            width: 120px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="123"></h1>
+    <table>
+        <thead>
+            <th>Sản phẩm</th>
+            <th>Nhà sản xuất</th>
+            <th>Nhà phát hành</th>
+            <th>Năm ra mắt</th>
+            <th>Giá bán</th>
+        </thead>
+        <tbody id="table-info"></tbody>
+    </table>
+    <script>
+        var games = {
+            "Fallout": {
+                "company": {
+                    "developer": 'Interplay Inc.',
+                    "publisher": 'Bethesda Softworks',
+                },
+                "release": 1997,
+                "price": 225000,
+            },
+            "Titan Quest AE": {
+                "company": {
+                    "developer": 'Iron Lore Entertainment',
+                    "publisher": 'THQ Nordic',
+                },
+                "release": 2016,
+                "price": 230000,
+            },
+            "Dota 2": {
+                "company": {
+                    "developer": 'Valve',
+                    "publisher": 'Valve',
+                },
+                "release": 2013,
+                "price": 'Free to play'
+            },
+            "Counter-Strike: GO": {
+                "company": {
+                    "developer": 'Valve',
+                    "publisher": 'Valve',
+                },
+                "release": 2012,
+                "price": 'Free to play',
+            },
+            "PUBG": {
+                "company": {
+                    "developer": 'PUBG Corporation',
+                    "publisher": 'PUBG Corporation',
+                },
+                "release": 2017,
+                "price": 340000
+            },
+        };
+        var a = Object.keys(games);
+        for (var i = 0; i < a.length; i++) {
+            var b = Object.keys(games[a[i]]);
+            var c = Object.keys(games[a[i]][b[0]]);
+        };
+        console.log(games[a[0]][b[0]]);
+        var tableInfo = document.getElementById('table-info');
+        for (var i = 0; i < a.length; i++) {
+            var tr = document.createElement('tr');
+            var td = document.createElement('td');
+            var data = document.createTextNode([a[i]]);
+            td.appendChild(data);
+            tr.appendChild(td);
+            for (var j = 0; j < b.length; j++) {
+                if (j === 0) {
+                    for (var z = 0; z < c.length; z++) {
+                        var td = document.createElement('td');
+                        var data = document.createTextNode(games[a[i]][b[j]][c[z]]);
+                        td.appendChild(data);
+                        tr.appendChild(td);
+                    };
+                }
+                else {
+                    var td = document.createElement('td');
+                        var data = document.createTextNode(games[a[i]][b[j]]);
+                        td.appendChild(data);
+                        tr.appendChild(td);
+                };
+            tableInfo.appendChild(tr);
+            };
+        };
+    </script>
+</body>
+
+</html>

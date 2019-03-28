@@ -1,0 +1,31 @@
+{
+    "name": "first name",
+    "iphone": [{
+        "name": "iphoneX",
+        "price": 699,
+        "made": [{
+            "in": "China",
+            "by": "California"
+            }],
+        "camera": [1.3, 10],
+        "discount": null,
+        "typeDiscount": null
+    }],
+    "samsung": {
+        "name": "Samsung 10+",
+        "price": 699,
+        "made": {
+        "in": "Vietnam",
+        "by": "Korea"
+        },
+        "camera": [1.3, 20, 10, 15],
+        "discount": 10,
+        "typeDiscount": "percent"
+    },
+    "sony": [{
+        "name": "XPERIA Z10",
+        "price": 799,
+        "made":"america",
+        "camera": [5.0, 20]
+    }]
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+<body>
+    <div id="tt" class="easyui-tabs" style="width:400px;height:250px;">
+        <div title="Home">
+            <table id='contacts'></table>   
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            var contacts;
+            setTimeout(function(){  //pass it an anonymous function that calls foo
+                          loadData("contact");
+                       },2000);
+        };
+
+        function loadData(myfile){
+           $.getJSON( myfile + "file.json", function(data){
+            console.log(data)
+              $.each(data, function(index, element){
+            $.each(element, function(i, item){  
+               $('#contacts').append('<tr><td>' + item.name + '</td><td>'+ item.email +'</td><td>' + item.phone + '</td><td>');       
+            });
+              });
+           });
+        }
+    </script>
+</body>
+</html>

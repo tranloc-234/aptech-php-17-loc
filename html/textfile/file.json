@@ -1,0 +1,15 @@
+{
+    "length": 2,
+    "info": [
+        {
+            "name":"Sam",
+            "email":"fred@server.com",
+            "phone":"789456235"
+        },
+        {
+            "name":"Fred",
+            "email":"fred@server.com",
+            "phone":"125689564"
+        }
+    ]
+}
