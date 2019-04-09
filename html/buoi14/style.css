@@ -1,0 +1,15 @@
+.image {
+    background-image: url('/tex/images/pexels-photo-1382734.jpeg');
+    background-repeat: no-repeat;
+}
+.image-first {
+    background-image: url('/tex/images/pexels-photo-132472.jpeg');
+}
+.a {
+    width: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+}

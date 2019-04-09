@@ -1,0 +1,47 @@
+.image {
+    background-image: url('/tex/images/1.jpeg');
+    position: relative;
+    background-size: cover;
+    height: 400px;
+}
+.image-first {
+    background-image: url('/tex/images/3.jpeg');
+}
+.image-second {
+    background-image: url('/tex/images/6.jpeg');
+    background-repeat: no-repeat;
+}
+.image-three {
+    background-image: url('/tex/images/5.jpeg');
+}
+.images {
+    background-image: url('/tex/images/2.jpeg');
+    position: relative;
+    background-position: center;
+    height: 250px;
+    background-size: cover;
+}
+.position {
+    position: absolute;
+    top: 100px;
+    right: 380px;
+    
+}
+.position-2 {
+    position: absolute;
+    top:150px;
+    right: 25%;
+}
+.position-1 {
+    position: absolute;
+    top: 200px;
+    right: 25%;
+}
+@media only screen and (max-width: 768px) {
+    .position {
+        position: absolute;
+        top: 90px;
+        right: 30px;
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="bootstrap.css">
+    </head>
+    <body>
+        <!-- <div id="card-0" class="card mb-3" style="max-width: 540px;"> -->
+            <!-- <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="..." class="card-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div> -->
+          <!-- </div> -->
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          <script>
+          $(document).ready(function(){
+              $.get('https://namcoi.com/projects/news-website-laravel/public/api/posts',function(data,status){
+                  if(status=='success'){
+                    for(var i=0;i<data.length;i++){
+                        console.log(data);
+                      var img = '<img src="'+data[i].image_url +'" class="card-img" >';
+                      var divCol4 = '<div id="divCol4-'+i+'" class="col-md-4 d-flex align-items-center"></div>';
+                      var divRow = '<div id="divRow-'+i+'" class="row no-gutters"></div>';
+                      var card = '<div id="card-'+i+'" class="card mb-3" style="max-width: 540px;"></div>'
+                      $('body').append(card);
+                      $('#card-'+i).append(divRow);
+                      $('#divRow-'+i).append(divCol4);
+                      $('#divCol4-'+i).append(img);
+                      var h5 = '<h5 class="card-title">'+data[i].title+'</h5>';
+                      var p = '<p class="card-text">'+data[i].description+'</p>';
+                      var divCardBody = '<div id="divCardBody-'+i+'" class="card-body"></div>'; 
+                      var divCol8 = '<div id="divCol8-'+i+'" class="col-md-8"></div>';
+                      $('#divRow-'+i).append(divCol8);
+                      $('#divCol8-'+i).append(divCardBody);
+                      $('#divCardBody-'+i).append(h5);
+                      $('#divCardBody-'+i).append(p);
+                    }
+                  }
+              })
+          })
+          </script>
+    </body>
+</html>

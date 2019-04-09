@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="bootstrap.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <title>Post</title>
+        
+    </head>
+<body>
+  
+    <div id="post-container"class="container">
+     
+
+    </div><!--end card post-->
+
+
+
+<script>
+    var post = document.getElementById('post-container');
+    function loadPost(){
+        http = new XMLHttpRequest();
+        http.onreadystatechange = function(){
+            if(this.readyState === 4){
+                var data = JSON.parse(this.responseText);
+               // console.log(data[1].title);
+                for(var i = 0; i < data.length; i++){
+                    //card
+                   var card = document.createElement('div');
+                   card.className = 'card my-3';
+                   //row
+                   var row = document.createElement('div');
+                   row.className = 'row';
+                   var cardBody = document.createElement('div');
+                   cardBody.className = 'col-8 card-body';
+                    // add categories
+                   var cat = document.createElement('h6');
+                   if (typeof data[i].categories[0] === 'undefined'){
+                        var catText = document.createTextNode('Category: Other');
+                            }else{
+                                var catText = document.createTextNode('Category: '+data[i].categories[0].name);
+                            };
+                    
+                   //console.log(data[i].categories[1].name);
+                   cat.appendChild(catText);
+                   cardBody.appendChild(cat);
+                    //add title
+                   var title = document.createElement('h4');
+                   var titleText = document.createTextNode(data[i].title);
+                   title.appendChild(titleText);
+                   cardBody.appendChild(title);
+                    //add date
+                    var postDate = document.createElement('p');
+                    postDate.className = 'text-muted';
+                   var dateText = document.createTextNode(data[i].created_at);
+                   postDate.appendChild(dateText);
+                   cardBody.appendChild(postDate);
+                   //add content
+                   var cardContent = document.createElement('p');
+                    cardContent.className ='card-text';
+                   var cardText = document.createTextNode(data[i].description);
+                   cardContent.appendChild(cardText);
+                   cardBody.appendChild(cardContent);
+                    // add link
+                    var cardLink = document.createElement('a');
+                    cardLink.className ='card-link';
+                    cardLink.setAttribute('href','#');
+                   var cardText = document.createTextNode('Continue reading');
+                   cardLink.appendChild(cardText);
+                   cardBody.appendChild(cardLink);
+                    //add card body into row
+                    row.appendChild(cardBody);
+                    
+                    
+                    //add image
+                    var cardImg = document.createElement('div');
+                    cardImg.className = 'col-4 style="max-width:200px;"';
+                    cardImg.setAttribute('id', ('image-'+(i+1)) );
+                    row.appendChild(cardImg);
+                    card.appendChild(row);
+                    post.appendChild(card);
+                    document.getElementById('image-'+(i+1)).style.backgroundImage = 'url('+data[i].image_url+')';
+                }
+            }
+        }
+        http.open("GET","./posts.json",false);
+        http.send();
+    }
+    loadPost();
+</script>
+</body>
+</html>

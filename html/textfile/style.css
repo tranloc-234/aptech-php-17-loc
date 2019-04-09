@@ -1,0 +1,15 @@
+.image {
+    height: 400px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+}
+.image-first {
+    background-image: url('/html/buoi8/img.jpg');
+    background-position: center;
+}
+.image-second {
+    background-image: url('/html/buoi8/img2.jpg');
+    background-position: center -100px;
+}

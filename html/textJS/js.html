@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       
+    </head>
+<body>
+    <script>
+       var alert = setTimeout(function() {
+           alert('waiting 3 minute');
+       }, 3000);
+       function clearAlert() {
+           clearTimeout(alert);
+       }
+
+    </script>
+    <input type="button" onclick="clearAlert()" value="click">
+</body>
+</html>

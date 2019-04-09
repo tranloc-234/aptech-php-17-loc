@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <p>this is paragraph</p>
+    <ul>
+        <li>one</li>
+        <li>two</li>
+    </ul>
+    <button id="first">click me now</button>
+    <button id="second">click me</button>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script>
+       $(document).ready(function(){
+           $("#first").click(function(){
+               $("p").append("<b> text demmo. </b>");
+           });
+           $("#second").click(function(){
+               $("ul").append("<li> three. </li>");
+           });
+        });
+   </script>
+</body>
+</html>

@@ -1,9 +1,35 @@
-html {
-
+#image {
+    background-image: url(./images/Layer\ 1.png);
+    position: relative;
+    height: 500px;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
-body {
-    background-color: #fff;
+.text {
+    position: absolute;
+    color: white;
+    text-align: center;
+    top: 50%;
+    left: 30%;
 }
-.wrap-content {
-    background-color: #f3f0e7;
+.image-1 {
+    background-image: url(./images/Menu\ Title.png);
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 75px;
+}
+.text-1 {
+    position: absolute;
+    color: white;
+    text-align: center;
+    top: 30%;
+    left: 47%;
+}
+.image-second {
+    background-image: url('/tex/images/Main\ banner.png');
+    background-size:cover;
+    background-repeat: no-repeat;
+  
+    width: auto;
 }
